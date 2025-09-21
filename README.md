@@ -1,2 +1,2 @@
-# full-stack-course
-This is a repo where full-stack codes are available for both frontend and backend.
+# DSA JAVA
+This is a repo where dsa codes are available in java

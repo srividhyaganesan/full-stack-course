@@ -1,0 +1,117 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    padding: 0px;
+}
+.outerbox{
+    background-image: url(photo.jpg);
+    background-size: cover;
+    height: 100vh; /*sets total height of viewport*/
+
+}
+.menubar{
+    color:white;
+    font-size:20px;
+    font-weight: bold; 
+    margin-left: 10px; 
+}
+.sidebar{
+    height: 100vh;
+    width: 350px;
+    box-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.1);
+     left:-350px; /* to hide temporarily*/
+     position: absolute;
+     transition: all 0.2s ease;
+}
+
+.sidebar .logo{
+    height: 35px;
+    font-size: 30px;
+    font-weight: bold;
+    
+
+}
+.sidebar .crossmark{
+    color:white;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 325px;
+
+}
+
+.sidebar .menu{
+    color: white;
+    width: 100%;
+   
+}
+
+.sidebar .menu ul li{
+    margin-top: 5px;
+    padding: 15px 15px;
+}
+
+.sidebar .menu ul li i,a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.sidebar .social-media-posts{
+    position: absolute;
+    bottom: 50px;
+    margin-left: 15px;
+
+}
+
+.sidebar .social-media-posts i{
+    padding-left: 10px;
+    color:white;
+    opacity:0.4;
+}
+
+.sidebar .logo img:hover{
+    transform: scale(1.2);
+
+}
+
+#check{
+    display: none;
+}
+
+.sidebar .menu ul li:hover{
+    box-shadow: 2px 2px 5px rgba(255,255,255,0.5);
+    
+}
+
+.sidebar .menu ul li i:hover{
+    color: aqua;   
+}
+
+.sidebar .menu ul li a:hover{
+    color:palegreen
+
+}
+
+.menubar:hover{
+    font-size: 25px;
+}
+.sidebar .crossmark:hover{
+    font-size: 30px;
+
+}
+
+.sidebar .social-media-posts i:hover{
+    opacity: 1;
+    font-size: 30px;
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked ~ .menubar{
+    opacity: 0;
+}
+

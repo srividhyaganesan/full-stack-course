@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player:Music for everyone</title>
+    <!--spotify clone -->
+    <link rel="icon" href="./icons/logo.png">
+    <!--performance optimisation hint to prepare connection early-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--to load google fonts and font awesome lib-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="spotify.css">
+    
+</head>
+<body>
+
+    <div class="mainpage">
+
+        <div class="sidebar">
+            <div class="navigation" >
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-house"></i>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href="#">Search</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="library">
+                <div class="libicon" >
+                    <i class="fa-solid fa-music"></i>
+                    <a href="#">Your Library </a>
+                    <i class="fa-solid fa-plus" id="ic1"></i>
+                    <i class="fa-solid fa-arrow-right" id="ic2"></i>
+                </div>
+
+                <div class="box1">
+                    <h5>Create your first playlist</h5>
+                    <p>It's easy,we will help you</p>
+                    <button class="btn-dark">Create playlist</button>
+                </div>
+
+                <div class="box2">
+                    <h5>Let's find some podcasts to follow</h5>
+                    <p>We'll keep you updated on new episodes</p>
+                    <button class="btn-dark-p">Browse Podcasts</button>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="top-nav">
+                <img src="./icons/backward_icon.png" alt="backward_icon">
+                <img src="./icons/forward_icon.png" alt="forward_icon">
+                <button class="premium">Explore Premium</button>
+                <button class="install"><i class="fa-regular fa-circle-down"></i>Install App</button>
+                <i class="fa-solid fa-user" id="user"></i>  
+            </div>
+
+
+            <div class="collections">
+                <h2>Recently Played </h2>
+                <div class="card-body">
+                <img src="./icons/card1img.jpeg" alt="card1img.jpeg" class="card1">
+                <h5>Top 50-Global</h5>
+                <p>Your daily updates on the most played tracks right...</p>
+                </div>
+
+                <div class="trend">
+                    <h2>Trending songs</h2>
+                    <div class="trending-1">
+                        <img src="./icons/card4img.jpeg" alt="card4img.jpeg" class="card4">
+                        <h5>Naa Ready Varava</h5>
+                        <h6>Song</h6>
+                        <p>Anirudh Ravichandran,Vijay</p>
+                    </div>
+
+                    <div class="trending-2">
+                        <img src="./icons/card3img.jpeg" alt="card3img.jpeg" class="card3">
+                        <h5>Mere Pass Tum ho</h5>
+                        <h6>Song</h6>
+                        <p>Silent Ocean</p>
+                    </div>
+
+                    <div class="trending-3">
+                        <img src="./icons/card2img.jpeg" alt="card4img.jpeg" class="card2">
+                        <h5>Mahiye Jinna Sohna</h5>
+                        <h6>Album</h6>
+                        <p>Darshan Goel</p>
+
+                    </div>
+
+                </div>
+
+                <div class="featured-chart">
+                    <h2>Featured charts </h2>
+                    <div class="featured-1">
+                        <img src="./icons/card1img.jpeg" alt="card1img.jpeg" class="card1">
+                        <h5>Top-50 Global</h5>
+                        <p>Your daily updates on the most played tracks right...</p>
+                    </div>
+
+                    <div class="featured-2">
+                        <img src="./icons/card5img.jpeg" alt="card5img.jpeg" class="card5">
+                        <h5>Top Songs Global</h5>
+                        <p>Your weekly updates on the most played tracks right...</p>
+                    </div>
+
+                    <div class="featured-3">
+                        <img src="./icons/card6img.jpeg" alt="card6img.jpeg" class="card6">
+                        <h5>Top Songs India</h5>
+                        <p>Your daily updates on the most played tracks right...</p>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="musicplay">
+            <div class="album">
+                <img src="./icons/card4img.jpeg">
+                <a href="#" id="song">Naa ready </a>
+                <br>
+                <a href="#" id="movie">Leo</a>
+            </div>
+            <div class="player-control">
+
+                <div class="play-icon">
+                    <img src="./icons/player_icon1.png">
+                    <img src="./icons/player_icon2.png">
+                    <img src="./icons/player_icon3.png">
+                    <img src="./icons/player_icon4.png">
+                    <img src="./icons/player_icon5.png">
+
+                </div>
+
+                <div class="play-time">
+
+                    <span class="curr-time">00:00</span>
+                    <input type="range" min="0" max="100" step="1">
+                    <span class="final-time">3.33</span> 
+                </div>
+
+            </div>
+
+            <div class="music control">
+                <i class="fa-solid fa-pause" id="pause"></i>
+                <i class="fa-solid fa-volume-high" id="high"></i>
+                <input type="range" min="0" max="100" value="50" id="cont">
+            </div>
+
+
+        </div>
+    </div>
+
+    
+</body>
+</html>

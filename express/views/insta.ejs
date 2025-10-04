@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Insta!</title>
+    <!-- no need to put /public/style.css  express js will serve -->
+    <link rel="stylesheet" href="/style.css"> 
+</head>
+<body>
+    <h4>The data related to <%=username.name%> are:</h4>
+    <button>Follow</button>
+    <button>Message</button>
+    <p>The followers are <%=username.followers%></p>
+    <p>Following are <%=username.following%></p>
+    <hr>
+    <h4>Posts</h4>
+    <% for(let i=0;i<username.posts.length;i++){ %>
+        <img src="<%=username.posts[i].image%>" alt="image">
+        <br>
+        <span><b>Likes:</b><%=username.posts[i].likes%></span>
+        <span><b>Comments:</b><%=username.posts[i].comments%></span>  
+        <br>
+        <br> 
+    <%} %>
+
+</body>
+</html>

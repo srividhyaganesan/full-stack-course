@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to learn rest-api!</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <% for(let i=0;i<posts.length;i++){ %>
+        <div class="posts">
+            <h3 class="user"> @<%=posts[i].username%></h3>
+            <h4 class="content"><%=posts[i].content%></h4>
+            <a href="http://localhost:8080/posts/<%=posts[i].id%>">Click here to know more</a>
+            <a href="http://localhost:8080/posts/<%=posts[i].id%>/edit">Edit the post</a>
+            <form method="POST" action="/posts/<%=posts[i].id%>?_method=DELETE">
+            <button>Delete post</button>
+        </div>
+    <% } %>
+    <br>
+    <br>
+    <a href="http://localhost:8080/posts/new"> Create a new post</a>
+    <script src="/index.js"></script>
+</body>
+</html>

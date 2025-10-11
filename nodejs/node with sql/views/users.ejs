@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>User info</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>email</th>
+            <th>edit option</th>
+            <th>delete option</th>
+        </tr>
+
+        <% for(let i=0;i<result.length;i++){ %>
+            <tr>
+                <td><%=result[i].id%></td>
+                <td><%=result[i].username%></td>
+                <td><%=result[i].email%></td>
+                <td><a href="http://localhost:8080/<%=result[i].id%>/edit">Edit details</a></td>
+                <td><form method="POST" action="/user/<%=result[i].id%>?_method=DELETE">
+            <button>Delete user</button></td>
+            </tr>
+
+        <%}%>
+    </table>
+</body>
+</html>

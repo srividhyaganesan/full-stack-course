@@ -1,2 +1,2 @@
-# DSA JAVA
-This is a repo where dsa codes are available in java
+# Full stack 
+This is a repo where full stack codes are available

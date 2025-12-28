@@ -1,0 +1,14 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <h3>Edit ur details here</h3>
+    <form method="POST" action="/listings/<%=editpost.id%>?_method=PATCH">
+        <input type="string" name="location" placeholder="enter location">
+        <br><br>
+        <input type="string" name="title" placeholder="enter title">
+        <br><br>
+        <input type="number" name="price" placeholder="enter price">
+        <br><br>
+
+        <button>Submit here!</button>
+    </form>
+</body>

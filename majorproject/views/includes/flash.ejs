@@ -1,0 +1,23 @@
+<% if(success && success.length){ %>
+    <div class="success">
+<%=success[0]%>
+</div>
+<% } %>
+
+<% if(deleted && deleted.length){ %>
+    <div class="delete">
+<%=deleted[0]%>
+</div>
+<% } %>
+
+<% if(updated && updated.length){ %>
+    <div class="update">
+<%=updated[0]%>
+</div>
+<% } %>
+
+<% if(errored && errored.length){ %>
+    <div class="error">
+<%=errored[0]%>
+</div>
+<% } %>

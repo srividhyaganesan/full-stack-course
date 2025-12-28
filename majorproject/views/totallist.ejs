@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <h2>All listings</h2>
+    <div class="card">
+        <% for(let i=0;i<totallist.length;i++) { %>
+        <!--
+        <a href="http://localhost:8080/listings/<%=totallist[i]._id %>"><%=totallist[i].title%></a>
+        <button><a href="http://localhost:8080/listings/<%=totallist[i]._id%>/edit">Edit info</a></button>
+        <br>
+        -->
+            <div class="indcard">
+                
+                <a href="http://localhost:8080/listings/<%=totallist[i]._id %>">
+                    <img src="<%=totallist[i].image.url%>">
+                </a>
+                <p><b><%=totallist[i].title%></b></p>
+                <p><%=totallist[i].desc%></p>
+                <p><b>Price:</b><%=totallist[i].price%></p>
+            </div>
+        <%}%>
+    </div>
+
+</body>

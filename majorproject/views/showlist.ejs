@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <h3>Details related to <%=getlist.title%>:</h3>
+    <div>
+        <img src="<%=getlist.image.url%>" alt="<%=getlist.image.filename%>" height="300px" width="300px">
+        <p><b>Owner:</b><%=getlist.owner.username%></p>
+        <p><%=getlist.desc%></p>
+        <p><b>Location:</b><%=getlist.location%></p>
+        <p><b>Price:</b><%=getlist.price%></p>
+        <% if(curruser && curruser._id.equals(getlist.owner._id)){%>
+            <a href="http://localhost:8080/listings/<%=getlist._id%>/edit"><button>Edit List</button></a>
+            <br><br>
+            <form method="POST" action="/listings/<%=getlist._id%>?_method=DELETE">
+            <button>Delete List</button>
+        <% } %>
+        </form>
+        <hr>
+        <div>
+            <h3>Leave a review</h3>
+            <form method="POST" action="/listings/<%=getlist._id%>/reviews">
+                <div>
+                    <label for="rating">Rating</label>
+                    <br>
+                    <input type="number" min="1" max="5" name="review[rating]">
+                </div>
+                <br>
+                <div>
+                    <label for="comments">comments</label>
+                    <br>
+                    <textarea name="review[comment]" id="comment" rows="2" cols="60" required></textarea>
+                </div>
+                <br>
+                <button>Submit review</button>
+            </form>
+        </div>
+        <h4>All reviews</h4>
+        <div class="reviews">
+            <% for(let review of getlist.reviews){%>
+                <div class="indreview">
+                    <ul>
+                        <h4>Anonymous  </h4>
+
+                        <li><%=review.comment%></li>
+                        <br><br>
+                        <li><b>Rating:</b><%=review.rating%></li>
+                    </ul>
+                    <form method="POST" action="/listings/<%=getlist._id%>/reviews/<%=review._id%>?_method=DELETE">
+                        <button>Delete</button>
+                    </form>
+                </div>
+            <%}%>
+        </div>
+    </div>
+</body>

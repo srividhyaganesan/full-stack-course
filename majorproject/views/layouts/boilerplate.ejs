@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-left">
+        <a href="/"><i class="fa-solid fa-compass"></i> Travel</a>
+        <a href="/">Home</a>
+        <a href="/listings">All listings</a>
+        <a href="/listings/new">Add listing</a>
+    </div>
+
+    <div class="nav-right">
+        <% if(!curruser) { %>
+        <a href="/signups">Signup</a>
+        <a href="/login">Login</a>
+        <% } %> <% if(curruser) { %>
+        <a href="/logout">Logout</a>
+        <% } %>
+    </div>
+
+    </div>
+    <hr>
+    <div class="container">
+        <%-include("../includes/flash.ejs") %>
+        <%- body -%>
+    </div>
+    <%-include("../includes/footer.ejs") %>
+</body>
+</html>

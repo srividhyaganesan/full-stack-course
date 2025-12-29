@@ -7,6 +7,9 @@ import LikeButton from './Likebutton'
 import Ludo from './Ludo'
 import Todo from './todo'
 import Lottery from './lottery'
+import Createform from './Form'
+import CommentsForm from './commentsform'
+import Showcomments from './showcomments'
 function App() {
   return (
     /*
@@ -24,10 +27,16 @@ function App() {
   <div>
     <Todo/>
   </div>
-  */
+
  <div>
   <Lottery/>
  </div>
+ */
+<div>
+
+  <Showcomments/>
+
+</div>
 
   )
 }

@@ -1,0 +1,42 @@
+.chatcontainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.chats {
+    background-color: aliceblue;
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+}
+h3{
+    color: green;
+}
+.message{
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+button a{
+    color: white;
+    text-decoration: none;
+}
+.editbutton{
+    background-color:pink;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: darkgreen;
+}
+.deletebutton{
+    background-color:red;
+    border-radius: 5px;
+    color:white;
+
+}

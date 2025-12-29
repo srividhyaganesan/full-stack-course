@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat history!</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h3>All chats!</h3>
+    <div class="chatcontainer">
+        <% for(let i=0;i<allchats.length;i++) {%>
+            
+            <div class="chats">
+                <ul >
+                    <li>From:<%=allchats[i].from%></li>
+                    <li>To:<%=allchats[i].to%></li>
+                    <li class="message">Message:<%=allchats[i].message%></li>
+                </ul>
+                <button class="editbutton"><a href="http://localhost:8080/chats/<%=allchats[i].id%>/edit">Edit msg!</a></button>
+                <form method="POST" action="/chats/<%=allchats[i].id%>?_method=DELETE">
+                    <button class="deletebutton">Delete</button>
+                </form>
+                
+            </div>
+            
+        <%} %>
+    </div>
+    <button><a href="http://localhost:8080/chats/new">Click here to add new chat!</a></button>
+</body>
+</html>

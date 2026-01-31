@@ -1,6 +1,6 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
-    <form method="POST" action="/listings">
+    <form method="POST" action="/listings" enctype="multipart/form-data">
         <h1>Create a new list</h1>
         <p><b>Title</b></p>
         <textarea name="listing[title]" placeholder="enter the title" rows="2" cols="40" required></textarea>
@@ -14,11 +14,15 @@
         <p><b>Price</b></p>
         <input type="number" placeholder="enter the price" name="listing[price]" required>
         <br><br>
+        <!--
         <p><b>Image url</b></p>
-        <input  type="string" placeholder="enter image url" name="listing[image][url]" required>
+        <input  type="text" placeholder="enter image url" name="listing[image][url]" >
         <br><br>
+    -->
+        <p><b>Upload Image</b></p>
+        <input  type="file"  name="listing[image][url]" >
         <p><b>Image name</b></p>
-        <input type="string" placeholder="enter image name" name="listing[image][filename]" required>
+        <input type="text" placeholder="enter image name" name="listing[image][filename]" >
         <br><br>
          <button>Submit</button>
     </form>

@@ -4,7 +4,8 @@
     height: 50px;
     align-items: center;
     position: sticky;
-    top: 0;                  
+    top: 0;  
+    z-index: 1000;                
 }
 
 .nav-left {
@@ -144,4 +145,47 @@
     width: 600px;
     color: black;
     background-color: palevioletred;
+}
+.indfilters{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+.icons{
+    text-align: center;
+    align-items: center;
+    opacity: 0.7;
+    margin-top: 10px;
+    padding-left: 70px;
+
+}
+.icons:hover{
+    opacity: 1;
+}
+.icons p{
+    font-size: 15px;
+}
+
+.tax-info{
+    display: none;
+}
+.taxtoggle{
+    margin-top: 10px;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.120);
+    background-color: rgb(255, 245, 238);
+    padding: 10px;
+    height: 10px;
+    text-align: center;
+
+}
+.nav-left button{
+    background-color: white;
+    color: rgba(255, 0, 0, 0.599);
+    padding: 5px;
+    border-radius: 6px;
+    background-color: rgb(255, 245, 238);
+
 }

@@ -14,7 +14,7 @@ main().then((req)=>{
 
 async function insertdata(){
     await listing.deleteMany({});
-    entiredata.data=entiredata.data.map((inddata)=>({...inddata,owner:"6950b49cd1866700e92a3e26"}))
+    entiredata.data=entiredata.data.map((inddata)=>({...inddata,owner:"69528f41bc4da19b2256f167"}))
     await listing.insertMany(entiredata.data);
 }
 

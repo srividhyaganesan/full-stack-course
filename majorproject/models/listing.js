@@ -15,10 +15,10 @@ const listingschema=new schema({
     },
     url: {
       type: String,
-      default: "https://unsplash.com/photos/photography-of-seashore-during-sunset-RqnfXDGXObA",
+      default: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
       set: (v) =>
         v === ""
-          ? "https://unsplash.com/photos/photography-of-seashore-during-sunset-RqnfXDGXObA"
+          ? "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fG1vdW50YWlufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
           : v
     }
   },

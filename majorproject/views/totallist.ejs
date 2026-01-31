@@ -1,6 +1,49 @@
 <% layout("/layouts/boilerplate") -%>
 <body>
-    <h2>All listings</h2>
+    <div class="UI filters">
+        <div class="indfilters">
+            <div class="icons">
+                <i class="fa-solid fa-fire"></i>
+                <p>Trending</p>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-bed"></i>
+                <p>Rooms</p>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-mountain-city"></i>">
+                <p>Castles</p>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-person-swimming"></i>
+                <p>Surfing</p>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-umbrella"></i>
+                <p>Beach</p>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-house"></i>
+                <p>Farms</p>
+            </div>
+            <div class="icons">
+                <i class="fa-solid fa-water"></i>
+                <p>Pools</p>
+            </div>
+            <div class="icons">
+                <i class="fa-regular fa-snowflake"></i>
+                <p>Snowflakes</p>
+            </div>
+            <div class="taxtoggle">
+                <input type="checkbox" id="taxswitch">
+                <span>Display price including taxes</span>
+            </div>
+
+
+        </div>
+    </div>
+    <hr>
+    <br>
     <div class="card">
         <% for(let i=0;i<totallist.length;i++) { %>
         <!--
@@ -15,9 +58,12 @@
                 </a>
                 <p><b><%=totallist[i].title%></b></p>
                 <p><%=totallist[i].desc%></p>
-                <p><b>Price:</b><%=totallist[i].price%></p>
+                <p><b>Price:</b><%=totallist[i].price%>
+                <i class="tax-info">+10% GST</i></p>
+
             </div>
         <%}%>
     </div>
+    <script src="/taxswitch.js"></script>
 
 </body>

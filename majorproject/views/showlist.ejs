@@ -7,21 +7,37 @@
         <p><%=getlist.desc%></p>
         <p><b>Location:</b><%=getlist.location%></p>
         <p><b>Price:</b><%=getlist.price%></p>
-        <% if(curruser && curruser._id.equals(getlist.owner._id)){%>
-            <a href="http://localhost:8080/listings/<%=getlist._id%>/edit"><button>Edit List</button></a>
-            <br><br>
-            <form method="POST" action="/listings/<%=getlist._id%>?_method=DELETE">
-            <button>Delete List</button>
-        <% } %>
+        <a href="http://localhost:8080/listings/<%=getlist._id%>/edit"><button>Edit List</button></a>
+        <br><br>
+        <form method="POST" action="/listings/<%=getlist._id%>?_method=DELETE">
+        <button>Delete List</button>
         </form>
         <hr>
         <div>
+            <% if(curruser) { %>
             <h3>Leave a review</h3>
+            
             <form method="POST" action="/listings/<%=getlist._id%>/reviews">
                 <div>
+                    <!-- 
                     <label for="rating">Rating</label>
                     <br>
-                    <input type="number" min="1" max="5" name="review[rating]">
+                    <input type="number" min="1" max="5" name="review[rating]"> 
+                    -->
+                    <fieldset class="starability-slot">
+                    <legend>Rating:</legend>
+                    <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
+                    <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
                 </div>
                 <br>
                 <div>
@@ -32,17 +48,19 @@
                 <br>
                 <button>Submit review</button>
             </form>
+        <% } %>
         </div>
         <h4>All reviews</h4>
         <div class="reviews">
             <% for(let review of getlist.reviews){%>
                 <div class="indreview">
                     <ul>
-                        <h4>Anonymous  </h4>
+                        <h4><%=review.author.username%></h4>
 
                         <li><%=review.comment%></li>
-                        <br><br>
-                        <li><b>Rating:</b><%=review.rating%></li>
+                        <p class="starability-result" data-rating=<%=review.rating%>>
+                            Rated: 3 stars
+                        </p>
                     </ul>
                     <form method="POST" action="/listings/<%=getlist._id%>/reviews/<%=review._id%>?_method=DELETE">
                         <button>Delete</button>

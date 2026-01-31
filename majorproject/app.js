@@ -123,7 +123,7 @@ app.use((err,req,res,next)=>{
     // res.status(status).send(msg);
 })
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT,()=>{
     console.log(`app is listening on the port ${PORT}`)

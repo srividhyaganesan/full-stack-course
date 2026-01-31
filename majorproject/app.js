@@ -25,6 +25,7 @@ app.use(express.urlencoded({extended:true}));
 engine=require("ejs-mate");
 app.engine("ejs",engine);
 const session=require("express-session");
+const MongoStore=require("connect-mongo").default;
 const flash=require("connect-flash");
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
@@ -32,7 +33,8 @@ const User=require("./models/users");
 
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/test');
+  //await mongoose.connect('mongodb://127.0.0.1:27017/test');
+  await mongoose.connect(process.env.ATLAS_DB_URL);
 }
 
 main().then((req)=>{
@@ -41,7 +43,21 @@ main().then((req)=>{
     console.log(err);
 })
 
+const store=MongoStore.create({
+        mongoUrl: process.env.ATLAS_DB_URL,
+        crypto:{
+            secret:"SRIvid@24"
+        },
+        touchAfter:24*60*60
+})
+
+store.on("error",(err)=>{
+    console.log("error in mongo session store",err);
+})
+
+
 const sessionoptions={
+    store:store,
     secret:"SRIvid@24",
     resave:false,
     saveUninitialized:true,
@@ -51,6 +67,8 @@ const sessionoptions={
         httpOnly:true
     }
 }
+
+
 app.get("/" ,(req,res)=>{
     res.send("Welcome to Wanderlust!");
 })
